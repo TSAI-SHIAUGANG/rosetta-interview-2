@@ -32,4 +32,12 @@ Route::group(['namespace'=>'Api'], function(){
         });
     });
 
+    // products
+    Route::group(['as'=>'products.', 'prefix'=>'products'], function(){
+
+        Route::group(['prefix'=>'{product}'], function(){
+            Route::post('publish', 'ProductController@publish')->name('publish');
+        });
+    });
+
 });
